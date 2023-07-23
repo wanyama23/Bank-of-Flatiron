@@ -26,7 +26,17 @@ function TransactionsList({transactions}) {
         {list}
       </tbody>
     </table>
+    
   );
+  {Transaction.map((item, id)=>{
+    return(
+      <div>
+        <span>Transaction</span><button id ={id}Delete></button>
+      </div>
+    )
+  })}
 }
+
+
 
 export default TransactionsList;

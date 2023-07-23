@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import TransactionsList from "./TransactionsList";
 import Search from "./Search";
 import AddTransaction from "./AddTransaction";
-
+import Transaction from  "./Transaction";
+import DeleteTransaction from "./DeleteTransaction";
 function Account() {
   const [transaction, setTransaction] = useState([])
   const [query, setQuery] = useState("")
@@ -21,6 +22,13 @@ function Account() {
       <TransactionsList transactions={transaction} />
     </div>
   );
+  {Transaction.map((item, id)=>{
+    return(
+      <div>
+        <span>Transaction</span><button id ={id}Delete></button>
+      </div>
+    )
+  })}
 }
 
 export default Account ;

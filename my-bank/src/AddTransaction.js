@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Transaction from "./Transaction";
 
-function AddTransactionForm() {
+function AddTransaction() {
   const [date, setDate] = useState("")
   const [description, setDescription] = useState("")
   const [category, setCategory] = useState("")
@@ -36,7 +36,21 @@ function AddTransactionForm() {
         </button>
       </form>
     </div>
+
+    
+    
+  
   );
+
+  {Transaction.map((item, id)=>{
+    return(
+      <div>
+        <span>Transaction</span><button id ={id}Delete></button>
+      </div>
+    )
+  })}
+
+  
 }
 
-export default AddTransactionForm;
+export default AddTransaction;
