@@ -3,8 +3,8 @@ import Account from "./Account";
 
 function App() {
   return (
-    <div className="ui raised segment">
-      <div className="ui segment violet inverted">
+    <div>
+      <div>
         <h2>Bank of Flatiron</h2>
       </div>
       <Account />
