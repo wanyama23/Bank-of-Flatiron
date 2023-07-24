@@ -1,13 +1,13 @@
 import React from "react";
 import Transaction from "./Transaction";
-function TransactionsList({transactions}) {
+function TransactionsList({transactions, onDelete}) {
   const list = transactions.map((item)=>{
-    return <Transaction key={item.id} date={item.date} description={item.description} category={item.category} amount={item.amount} />;
+    return <Transaction key={item.id} date={item.date} description={item.description} category={item.category} amount={item.amount} onDelete={()=>onDelete(item.id)}/>;
   })
   return (
     
     <table>
-      <tbody>
+      <thead>
         <tr>
           <th>
              <h3>Date</h3>
@@ -21,8 +21,10 @@ function TransactionsList({transactions}) {
           <th>
              <h3>Amount</h3>
           </th>
+          
         </tr>
-        
+        </thead>
+        <tbody>
         {list}
       </tbody>
     </table>

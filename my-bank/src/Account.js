@@ -15,11 +15,15 @@ function Account() {
   function handleSearch(e) {
     setQuery(e.target.value)
  }
+ function deleteTransaction(id){
+  const trans = transaction.filter(transaction=> transaction.id !==id)
+  setTransaction(trans)
+ }
   return (
     <div>
       <Search handleSearch={handleSearch} />
       <AddTransaction />
-      <TransactionsList transactions={transaction} />
+      <TransactionsList transactions={transaction} onDelete = {deleteTransaction} />
     </div>
   );
   {Transaction.map((item, id)=>{
