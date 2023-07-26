@@ -4,6 +4,7 @@ function TransactionsList({transactions, onDelete}) {
   const list = transactions.map((item)=>{
     return <Transaction key={item.id} date={item.date} description={item.description} category={item.category} amount={item.amount} onDelete={()=>onDelete(item.id)}/>;
   })
+  
   return (
     
     <table>
@@ -30,13 +31,13 @@ function TransactionsList({transactions, onDelete}) {
     </table>
     
   );
-  {Transaction.map((item, id)=>{
-    return(
-      <div>
-        <span>Transaction</span><button id ={id}Delete></button>
-      </div>
-    )
-  })}
+  // {Transaction.map((item, id)=>{
+  //   return(
+  //     <div>
+  //       <span>Transaction</span><button id ={id}Delete></button>
+  //     </div>
+  //   )
+  // })}
 }
 
 
